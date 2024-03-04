@@ -30,14 +30,22 @@ func (fl freelancer) CalculateSalary() float64 {
 	return fl.HourlyRate * float64(fl.HoursWorked)
 }
 
-func EmployeeTypeHandlerFactory(employeeType string) (IEmployeeTypeHandler, error) {
+func EmployeeTypeHandlerFactory(employeeType string, days, hours int, periodRate float64) (IEmployeeTypeHandler, error) {
 	switch employeeType {
 	case FullTimeEmployee:
-		return fullTimeEmployee{}, nil
+		return fullTimeEmployee{
+			MonthlySalary: periodRate,
+		}, nil
 	case Contractor:
-		return contractor{}, nil
+		return contractor{
+			DaysWorked: days,
+			DailyRate:  periodRate,
+		}, nil
 	case Freelancer:
-		return freelancer{}, nil
+		return freelancer{
+			HoursWorked: hours,
+			HourlyRate:  periodRate,
+		}, nil
 	}
 
 	return nil, fmt.Errorf("type of employee not exists")

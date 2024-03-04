@@ -3,15 +3,12 @@ package salary
 import "fmt"
 
 func SalaryCalculation() {
-	fullTimeEmp := fullTimeEmployee{MonthlySalary: 15000}
-	contractors := contractor{DailyRate: 3000, DaysWorked: 20}
-	freelancers := freelancer{HourlyRate: 100, HoursWorked: 20}
+	fullTimeEmpHandler, _ := EmployeeTypeHandlerFactory("fullTimeEmployee", 0, 0, 15000)
+	fmt.Println("Full-time employee salary:", fullTimeEmpHandler.CalculateSalary())
 
-	fmt.Println("Full-time employee salary:", fullTimeEmp.CalculateSalary())
-	fmt.Println("Contractor salary:", contractors.CalculateSalary())
-	fmt.Println("Freelancer salary:", freelancers.CalculateSalary())
+	contractorHandler, _ := EmployeeTypeHandlerFactory("contractor", 20, 0, 3000)
+	fmt.Println("Contractor salary:", contractorHandler.CalculateSalary())
 
-	//TODO: Make this handlerFactory work as expected
-	empHandler, _ := EmployeeTypeHandlerFactory("freelancer")
-	fmt.Println("Freelancer salary:", empHandler.CalculateSalary())
+	freelancerHandler, _ := EmployeeTypeHandlerFactory("freelancer", 0, 20, 100)
+	fmt.Println("Freelancer salary:", freelancerHandler.CalculateSalary())
 }
