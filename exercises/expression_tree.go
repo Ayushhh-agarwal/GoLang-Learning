@@ -4,6 +4,19 @@ import (
 	"fmt"
 )
 
+// 	Question :
+//	Create an expression tree using golang structs. For example string a + b - c on tree would look like the following,
+//				+
+//			  /   \
+//		 	 a     -
+//				 /   \
+//				b     c
+//
+//	Building the tree can be done manually through code. Once the tree is built,
+//	traverse the tree in preorder and postorder format and print the values.
+//
+//						Expectation: Use Recursion, Strings, Pointers, Struct
+
 type Node struct {
 	Value     string
 	LeftNode  *Node

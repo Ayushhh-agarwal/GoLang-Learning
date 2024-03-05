@@ -5,6 +5,21 @@ import (
 	"sync"
 )
 
+//  Question :
+//	For a given set of strings, find out the frequency of each letter in all the strings parallel.
+//	For example, if given the following input.
+//															Expectations: Slices, Goroutines, Channels
+//	Input : [“quick”, “brown”, “fox”, “lazy”, “dog”]
+//
+//	The output should be.
+//	{
+//		“a”: 1,
+//		“b”: 1,
+//		“c”: 1,
+//		…
+//		“z”: 1
+//	}
+
 func CountLettersUsingGoRoutines() {
 	words := []string{"quick", "brown", "fox", "lazy", "dog"}
 

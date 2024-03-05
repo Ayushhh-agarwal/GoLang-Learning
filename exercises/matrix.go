@@ -5,6 +5,22 @@ import (
 	"fmt"
 )
 
+// 	Question :
+//	Create a struct called 'Matrix'. The Matrix struct has the following information:
+//		number of rows of matrix
+//		number of columns of matrix
+//		elements of matrix (You can use 2D vector)
+//
+//	The Matrix struct has methods for each of the following:
+//		get the number of rows
+//		get the number of columns
+//		set the elements of the matrix at a given position (i,j)
+//		adding two matrices. (2nd matrix can be taken as input to the method)
+//		print matrix structure as json
+//	You can assume that the dimensions are correct for the multiplication and addition.
+//
+//													Expectation: Use structs, slices, methods
+
 type Matrix struct {
 	Rows     int
 	Cols     int
