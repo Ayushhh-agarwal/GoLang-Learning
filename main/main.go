@@ -6,7 +6,14 @@ import (
 )
 
 func main() {
+
+	// Basic exercises
 	exercises.RunMatrix()
 	exercises.MakeExpressionTree()
 	salary.SalaryCalculation()
+
+	//GoRoutine Related exercises
+	exercises.CountLettersUsingGoRoutines()
+	exercises.AverageRating()
+	exercises.BankAccount()
 }
